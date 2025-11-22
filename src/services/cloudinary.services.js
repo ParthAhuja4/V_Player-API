@@ -1,8 +1,5 @@
 import { v2 as cloudinary } from "cloudinary";
 import fs from "fs";
-import dotenv from "dotenv";
-
-dotenv.config(); //Even though your server starts from index.js, your imports are executed before index.js runs, so cloudinary.js loaded before dotenv, making env vars undefined — adding dotenv inside cloudinary.js ensured env vars load before cloudinary.config().
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
